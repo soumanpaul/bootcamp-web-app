@@ -4,21 +4,43 @@ const {
   getBootcamp,
   createBootcamp,
   updateBootcamp,
-  deleteBootcamp
+  deleteBootcamp,
+  getBootcampInRadius,
+  bootcampPhotoUpload
 } = require("../controllers/bootcamps");
+
+const Bootcamp = require('../models/Bootcamp');
+
+// Include other resource routers
+const courseRouter = require('./courses');
+const reviewRouter = require('./reviews');
+
+// Importin middleware
+const advancedResults = require('../middleware/advancedResults');
+const { protect, authorize } = require('../middleware/auth.middleware'); 
 
 const router = express.Router();
 
+// Re-route into other resource routers
+router.use('/:bootcampId/courses', courseRouter)
+router.use('/:bootcampId/reviews', reviewRouter)
+
+
+router.route('/radius/:zipcode/:distance').get(getBootcampInRadius);
+
+router.route('/:id/photo').put(protect, authorize('publisher', 'admin'), bootcampPhotoUpload);
+
+ 
 router
   .route("/")
-  .get(getBootcamps)
-  .post(createBootcamp);
+  .get(advancedResults(Bootcamp, 'courses'), getBootcamps)
+  .post(protect, authorize('publisher', 'admin'), createBootcamp);
 
 router
   .route("/:id")
   .get(getBootcamp)
-  .put(updateBootcamp)
-  .delete(deleteBootcamp);
+  .put(protect, authorize('publisher', 'admin'), updateBootcamp)
+  .delete(protect, authorize('publisher', 'admin'), deleteBootcamp);
 
 
 module.exports = router;
