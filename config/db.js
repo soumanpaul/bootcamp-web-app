@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 // Load env vars
-dotenv.config({ path: './config/config.env'})
-const uri = process.env.MONGO_URI
+// dotenv.config({ path: './config/config.env'})
+const MONGO_URI="mongodb+srv://Sam1729Paul:Sam1729Paul@cluster0-qhlvw.mongodb.net/devcamp?retryWrites=true&w=majority"
+// const uri = process.env.MONGO_URI
 const connectDB = async () => {
-  const conn = await mongoose.connect(uri, {
+  const conn = await mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
