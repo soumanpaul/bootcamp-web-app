@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 // Load env vars
-dotenv.config({ path: './config/config.env'})
+dotenv.config({ path: './config.env'})
 // const uri = "mongodb://localhost:27017/SOUMAN"
 const connectDB = async () => {
-  const conn = await mongoose.connect("mongodb://localhost:27017/Bootcamps", {
+  const conn = await mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

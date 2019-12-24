@@ -16,7 +16,7 @@ const Review = require('./models/Review');
 
 // process.env.MONGO_URI
 // Connect to DB
-mongoose.connect("mongodb://localhost:27017/Bootcamps", {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
