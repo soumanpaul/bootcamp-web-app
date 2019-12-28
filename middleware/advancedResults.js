@@ -1,7 +1,7 @@
 const advancedResults = (model, populate) => async (req, res, next) =>{
-
+  
   let query;
-
+   
   // Copy req.query
   const reqQuery = { ...req.query };
   
@@ -10,7 +10,7 @@ const advancedResults = (model, populate) => async (req, res, next) =>{
   
   // Loop over remiveFields and delete them from reqQuery
   removeFields.forEach(param => delete reqQuery[param]);
-
+  
   console.log(reqQuery);
 
   // Create query string

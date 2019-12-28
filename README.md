@@ -77,7 +77,7 @@ npm start
 
 ## Demo
 
-The API is live at [devcamper.io](https://devcamper.io)
+The API is live at [https://devbootcamps.herokuapp.com/](https://devbootcamps.herokuapp.com/)
 
 Extensive documentation with examples [here](https://documenter.getpostman.com/view/5731747/SWEDzEg7?version=latest)
 

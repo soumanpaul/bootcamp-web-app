@@ -120,7 +120,7 @@ exports.updatePassword = asyncHandler(async (req, res, next) => {
 // @access    Public
 exports.forgotPassword = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
-
+  
   if (!user) {
     return next(new ErrorResponse("There is no user with that email", 400));
   }
