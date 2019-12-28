@@ -77,7 +77,11 @@ npm start
 
 ## Demo
 
+<<<<<<< HEAD
 The API is live at [https://devbootcamps.herokuapp.com/](https://devbootcamps.herokuapp.com/)
+=======
+The API is live at [Live API Link](https://devbootcamps.herokuapp.com/api/v1/bootcamps)
+>>>>>>> d168fe66ccb210eeb8efae0619d38561966066f8
 
 Extensive documentation with examples [here](https://documenter.getpostman.com/view/5731747/SWEDzEg7?version=latest)
 
