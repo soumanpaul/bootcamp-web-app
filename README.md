@@ -33,7 +33,7 @@ The API is live at [Live API Link](https://devbootcamps.herokuapp.com/api/v1/boo
 Extensive documentation with examples [here](https://documenter.getpostman.com/view/5731747/SWEDzEg7?version=latest)
 
 
-<!-- ![](/public/images/output.gif) -->
+![](/screen/output_lkmEA1.gif)
 
 ---
 
